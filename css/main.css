@@ -1,0 +1,60 @@
+#sounds  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    gap: 30px;
+}
+
+#sounds p {
+    
+    border: 20px;
+    padding: 30px;
+    font-family: helvetica;
+    background-color: rgb(137, 255, 166);
+    border-radius: 20px;
+    box-shadow: 14px 7px rgb(143, 123, 24) ;
+}
+
+body {
+    background-color: rgb(193, 186, 0)  ;
+}
+
+#pause {
+   width: 63px;
+}
+
+#play {
+    width: 63px;
+    font-size: 42px;
+}
+
+#stop {
+    width: 63px;
+}
+
+#record {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.playb  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    gap: 60px;
+    
+}
+
+.playb button {
+    height: 67px;
+    font-size: 50px;
+    color:  rgb(122, 228, 149);
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
