@@ -11,6 +11,12 @@ header {
    height: 90px;
 }
 
+header img {
+    width: 153px;
+    margin-top: 16px;
+    margin-right: 190px;
+}
+
 header h3 {
     margin: 0; 
     margin-right: 290px;
@@ -45,9 +51,10 @@ header h3 {
     border: 20px;
     padding: 30px;
     font-family: helvetica;
-    background-color: rgb(255, 73, 194);
+    background: linear-gradient(to bottom, #898989, #595959) no-repeat;
     border-radius: 20px;
-    box-shadow: 14px 7px rgb(216, 60, 109);
+    box-shadow: 9px 4px rgb(43, 43, 43);
+    color: white;
 }
 
 body {
@@ -89,8 +96,9 @@ body {
 .playb button {
     height: 67px;
     font-size: 50px;
-    color:  rgb(250, 108, 255);
+    color:  rgb(255, 255, 255);
     border-radius: 50px;
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient(to bottom, #898989, #595959) no-repeat;
+    border-color: rgb(42, 42, 42);;
 }
 
