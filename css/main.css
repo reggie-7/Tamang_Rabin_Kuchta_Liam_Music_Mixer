@@ -2,13 +2,21 @@
     display: none;
 }
 
+body {
+    background: linear-gradient(to bottom, #ffe554, #ff0088) no-repeat;
+    margin: 0;
+    height: 100vh; 
+}
+
+/* HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER */
+
 header {
     font-size: 40px;
     font-family: helvetica;
-   display: flex;
-   justify-content: center;
-   background-color: rgb(255, 232, 179);
-   height: 90px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 232, 179);
+    height: 90px;
 }
 
 header img {
@@ -24,6 +32,8 @@ header h3 {
     color: rgb(228, 145, 112);
 }
 
+/* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV */
+
 #main-nav a {
     color:rgb(228, 145, 112);
     margin-left: 60px;
@@ -33,14 +43,30 @@ header h3 {
     margin-top: 33px;
 }
 
+#nav {
+    display: flex;
+    justify-content: center;
+}
+
 #main-nav {
     display: flex;
+    justify-content: center;
 }
+
+/* MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER */
+
+#record {
+    display: flex;
+    justify-content: center;
+    margin-top: 140px;
+    
+}
+
+/* SOUNDS SOUNDS SOUNDS SOUNDS SOUNDS SOUNDS SOUNDS SOUNDS SOUNDS SOUNDS SOUNDS SOUNDS SOUNDS */
 
 #sounds  { 
     font-size: 30px;
     gap: 30px;
-    
 }
 
 #allsounds {
@@ -57,20 +83,18 @@ header h3 {
 }
 
 #sounds p {
-    border: 20px;
+    border: 20px red;
     padding: 30px;
     font-family: helvetica;
-    background: linear-gradient(to bottom, #898989, #595959) no-repeat;
+    /*background: linear-gradient(to bottom, #898989, #595959) no-repeat ; */
+    background-color: rgba(0, 0, 0, 0.13);
+    border-color: black;
     border-radius: 20px;
-    box-shadow: 9px 4px rgb(43, 43, 43);
+    box-shadow: 9px 4px rgb(0, 0, 0);
     color: white;
 }
 
-body {
-    background: linear-gradient(to bottom, #ffe554, #ff0088) no-repeat;
-    margin: 0;
-    height: 100vh; 
-}
+/* BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS */
 
 #pause {
    width: 63px;
@@ -85,13 +109,6 @@ body {
     width: 63px;
 }
 
-#record {
-    display: flex;
-    justify-content: center;
-    margin-top: 140px;
-    
-}
-
 .playb  {
     display: flex;
     justify-content: center;
@@ -99,7 +116,6 @@ body {
     text-align: center;
     font-size: 30px;
     gap: 60px;
-    
 }
 
 .playb button {
