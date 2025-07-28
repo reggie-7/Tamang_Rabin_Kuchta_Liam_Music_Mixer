@@ -32,7 +32,7 @@ header h3 {
     color: rgb(228, 145, 112);
 }
 
-/* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV */
+/* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV */
 
 #main-nav a {
     color:rgb(228, 145, 112);
@@ -53,7 +53,7 @@ header h3 {
     justify-content: center;
 }
 
-/* MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER MIXER */
+/* RECORD PLAYER RECORD PLAYER RECORD PLAYER RECORD PLAYER RECORD PLAYER RECORD PLAYER RECORD */
 
 #record {
     display: flex;
@@ -94,7 +94,7 @@ header h3 {
     color: white;
 }
 
-/* BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS */
+/* BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS  */
 
 #pause {
    width: 63px;
@@ -123,7 +123,17 @@ header h3 {
     font-size: 50px;
     color:  rgb(255, 255, 255);
     border-radius: 50px;
-    background: linear-gradient(to bottom, #898989, #595959) no-repeat;
-    border-color: rgb(42, 42, 42);;
+    /*background: linear-gradient(to bottom, #898989, #595959) no-repeat; */
+    background-color: rgba(0, 0, 0, 0.13);
+    border-color: rgb(0, 0, 0);;
 }
 
+/* HOW TO HOW TO HOW TO HOW TO HOW TO HOW TO HOW TO HOW TO HOW TO HOW TO HOW TO HOW TO */
+
+#howto-use {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-family: helvetica;
+    margin-top: 370px;
+}
