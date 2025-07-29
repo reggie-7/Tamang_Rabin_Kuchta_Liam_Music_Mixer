@@ -5,14 +5,16 @@
 body {
     background: linear-gradient(to top, #ffc35b, #ff0088) no-repeat;
     margin: 0;
-    height: 100vh; 
+    font-family: 'Anton', sans-serif;
+    background-size: cover;
+    min-height: 100vh;
 }
 
 /* HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER */
 
 header {
     font-size: 40px;
-    font-family: helvetica;
+    font-family: 'Anton', sans-serif;
     display: flex;
     justify-content: center;
     background-color: #ff0088;
@@ -64,12 +66,12 @@ header h3 {
     display: flex;
     justify-content: center;
     margin-top: 5px;
+    height: 800px;
 }
 
-#record img {
-    border: 2px solid black;
+/* #record img {
     width: 680px;
-}
+} */
 
 /* DROP AREA DROP AREA DROP AREA DROP AREA DROP AREA DROP AREA DROP AREA DROP AREA */
 
@@ -167,6 +169,7 @@ color
     align-items: center;
     text-align: center;
     gap: 60px;
+    margin-bottom: 60px;
 }
 
 .playb button {
@@ -183,8 +186,28 @@ color
 
 #howto-use {
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center;     
+    text-align: center;      
     font-size: 30px;
     font-family: helvetica;
-    margin-top: 370px;
+    margin-top: 30px;
+    padding: 2rem 1rem;     
+}
+
+
+/* RECORD ANIMATION */
+@keyframes spinDisk {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#record:hover #disk {
+  animation: spinDisk 1s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
 }
