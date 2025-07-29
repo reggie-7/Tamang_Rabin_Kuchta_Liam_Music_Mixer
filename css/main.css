@@ -156,6 +156,11 @@ color
     height: 63px;
 }
 
+#reset {
+    width: 63px;
+    height: 63px;
+}
+
 .playb  {
     display: flex;
     justify-content: center;
