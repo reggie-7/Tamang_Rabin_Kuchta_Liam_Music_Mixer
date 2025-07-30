@@ -196,7 +196,7 @@ color
 }
 
 
-/* RECORD ANIMATION */
+ 
 @keyframes spinDisk {
   from {
     transform: rotate(0deg);
@@ -211,3 +211,8 @@ color
   transform-box: fill-box;
   transform-origin: center;
 }
+
+
+
+
+
