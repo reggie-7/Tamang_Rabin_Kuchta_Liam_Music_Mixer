@@ -6,7 +6,6 @@ const buttonPause = document.querySelector("#pause");
 const buttonStop = document.querySelector("#stop");
 const buttonPlay = document.querySelector("#play");
 const buttonReset = document.querySelector("#reset");
-const volume = document.querySelector("#volumebar");
 const soundsDiv = document.querySelector("#sounds1");
 const recordDisc = document.querySelector("#record-disc");
 const dropAreas = document.querySelectorAll(".drop-area");
