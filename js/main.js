@@ -1,107 +1,119 @@
 console.log("JavaScript is connected");
 
-const buttonPause = document.querySelector("pause"),
-buttonStop = document.querySelector("stop"),
-volume = document.querySelector("volumebar"),
-buttonPlay = document.querySelector("#play"),
-buttonReset = document.querySelector("#reset");
+//variables
+
+const buttonPause = document.querySelector("#pause");
+const buttonStop = document.querySelector("#stop");
+const buttonPlay = document.querySelector("#play");
+const buttonReset = document.querySelector("#reset");
+const volume = document.querySelector("#volumebar");
+const soundsDiv = document.querySelector("#sounds1");
+const recordDisc = document.querySelector("#record-disc");
 const dropAreas = document.querySelectorAll(".drop-area");
-const sounds = document.querySelectorAll(".single-sound")
-const soundsDiv = document.querySelector("sounds1");
-
-let dragSound;
-let playing = [];
-const reorderSounds = [];
-
+const sounds = document.querySelectorAll(".single-sound");
 let currentDraggedElement = null;
+let playing = [];
+let reorderSounds = [];
 
+//functions
 
-// sounds back to top 
-sounds.forEach((sound) => {
-    reorderSounds.push(sound.parentElement);
-});
-
-
-
-// FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS 
-function playSound() {
-    playing.forEach((audio) => {
-        audio.play();
-    });
-}
-
-function pauseSound() {
-    playing.forEach((audio) => {
-        audio.pause();
-    });
-}
-
-function restartSound() {
-    playing.forEach((audio) => {
-        audio.currentTime = 0;
-        audio.play();
-    });
-}
-
-//--------------------------------------
 function dragStart() {
-    console.log("Drag Start Called");
     currentDraggedElement = this;
-    console.log(currentDraggedElement);
-}
+  }
 
 function dragOver(event) {
     event.preventDefault();
+  }
+
+function drop(event) {
+    event.preventDefault();
+    this.classList.remove("hovering");
+
+// it doesn't srop in a box that has a sound    
+    if (this.querySelector(".single-sound")) return;
+    this.appendChild(currentDraggedElement);
+    currentDraggedElement = null;
+    const droppedAudios = [];
+    document.querySelectorAll(".drop-area .single-sound").forEach((p) => {
+      const soundId = p.getAttribute("data-sound");
+      const audioEl = document.getElementById(soundId);
+      if (audioEl) {
+        droppedAudios.push(audioEl);
+      }
+    });
+    droppedAudios.forEach((audio) => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+// all our sounds play from the start    
+    droppedAudios.forEach((audio) => audio.play());
+    playing = droppedAudios;
+  }
+
+function resetMixer() {
+    
+    const topContainer = document.querySelector("#sounds1");
+    const allSounds = document.querySelectorAll(".single-sound");
+  
+    allSounds.forEach(function(sound) {
+      topContainer.appendChild(sound);
+      sound.setAttribute("draggable", "true");
+    });
+
+    document.querySelectorAll("audio").forEach(audio => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  
+    playing = [];
 }
 
 function dragEnter(event) {
     event.preventDefault();
     this.classList.add("hovering");
-    console.log("enter")
 }
-
+  
 function dragLeave() {
     this.classList.remove("hovering");
 }
 
-function drop(event) {
-    event.preventDefault();
-    this.classList.remove("hovering"); 
-    if (this.querySelector(".label")) return;
-    this.appendChild(currentDraggedElement);
-    currentDraggedElement = null;
-}     
-//------------------------------------------
+sounds.forEach(function(sound) {
+  reorderSounds.push(sound.parentElement);
+});
 
-
-function reorder() {
-    sounds.forEach((sound, index) => {
-
-    reorderSounds[index].appendChild(sound);
-    });
-
-    playing.forEach((audio) => {
-        audio.pause();
-        audio.currentTime = 0;
-    });
-    playing = [];
+function playAll() {
+  playing.forEach(function(audio) {
+    audio.play();
+  });
 }
 
-// event listeners
+function pauseAll() {
+  playing.forEach(function(audio) {
+    audio.pause();
+  });
+}
 
-sounds.forEach(sound => {
-    sound.addEventListener("dragstart", dragStart);
+function stopAll() {
+  playing.forEach(function(audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+}
+
+//Event listeners
+
+sounds.forEach(function(sound) {
+  sound.addEventListener("dragstart", dragStart);
 });
 
-dropAreas.forEach(area => {
-    area.addEventListener("dragover", dragOver);
-    area.addEventListener("drop", drop);
+dropAreas.forEach(function(area) {
+  area.addEventListener("dragover", dragOver);
+  area.addEventListener("dragenter", dragEnter);
+  area.addEventListener("dragleave", dragLeave);
+  area.addEventListener("drop", drop);
 });
 
-buttonReset.addEventListener("click", () => {
-    document.querySelectorAll(".single-sound").forEach(sound => {
-    soundsDiv.appendChild(sound);
-    sound.setAttribute("draggable", true);
-    });
-});            
-  
+buttonPlay.addEventListener("click", playAll);
+buttonPause.addEventListener("click", pauseAll);
+buttonStop.addEventListener("click", stopAll);
+buttonReset.addEventListener("click", resetMixer);
